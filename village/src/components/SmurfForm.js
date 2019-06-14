@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import FormContainer from './StyledComponents/FormContainer';
 
+const initial = {
+  name: '',
+  age: '',
+  height: '',
+};
+
 class SmurfForm extends Component {
   constructor(props) {
     super(props);
     this.id = this.props.match.params.id.trim();
-    const initial = {
-      name: '',
-      age: '',
-      height: '',
-    };
     const smurf = this.id? this.props.getSmurf(this.id)[0] : initial;
     this.state = {
       name: smurf.name,
@@ -32,6 +33,12 @@ class SmurfForm extends Component {
       height: ''
     });
     this.props.history.push('/');
+  }
+
+  handleCancel = event => {
+    event.preventDefault();
+    this.props.history.push('/smurf-form/ ');
+    this.setState({...initial});
   }
 
   handleInputChange = e => {
