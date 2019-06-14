@@ -5,7 +5,7 @@ const FormContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 2em auto;
   max-width: 500px;
   width: 100%;
 

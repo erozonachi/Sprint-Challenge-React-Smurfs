@@ -10,6 +10,9 @@ const SmurfItem = styled.div`
   color: #555;
   margin: .5em 0;
   box-shadow: 4px 4px 4px 4px #ccc;
+  @media (max-width: 500px) {
+    width: 90%;
+  }
   > a{
     text-decoration: none;
     color: inherit;
