@@ -15,7 +15,7 @@ class SmurfForm extends Component {
   addSmurf = event => {
     event.preventDefault();
     if(this.state.name.trim() !== '' && this.state.age.trim() !== '' && this.state.height.trim() !== '') {
-      this.props.addHandler({...this.state});
+      this.id? this.props.editHandler({...this.state}, this.id) : this.props.addHandler({...this.state});
     }
 
     this.setState({
@@ -52,7 +52,7 @@ class SmurfForm extends Component {
             value={this.state.height}
             name="height"
           />
-          <button type="submit">Add to the village</button>
+          <button type="submit">{this.id? 'Edit Smurf' : 'Add to the village'}</button>
         </form>
       </div>
     );
