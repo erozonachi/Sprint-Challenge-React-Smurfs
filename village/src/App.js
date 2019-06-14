@@ -56,7 +56,7 @@ export default function App(props) {
         <Route 
           exact
           path='/' 
-          render={props => <Smurfs smurfs={smurfs} {...props} />}
+          render={props => <Smurfs smurfs={smurfs} delHandler={deleteSmurf} {...props} />}
         />
         <Route 
           path='/smurf-form' 
