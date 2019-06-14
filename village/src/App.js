@@ -40,10 +40,11 @@ export default function App(props) {
     <Router>
       <div className="App">
         <nav>
-          <NavLink to='/' label='Smurfs' />
-          <NavLink to='/smurf-form' label='Add Smurf' />
+          <NavLink to='/'>Smurfs</NavLink>
+          <NavLink to='/smurf-form'>Add Smurf</NavLink>
         </nav>
         <Route 
+          exact
           path='/' 
           render={props => <Smurfs smurfs={smurfs} {...props} />}
         />
