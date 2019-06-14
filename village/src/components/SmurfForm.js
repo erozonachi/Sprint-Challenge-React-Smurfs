@@ -3,10 +3,12 @@ import React, { Component } from 'react';
 class SmurfForm extends Component {
   constructor(props) {
     super(props);
+    this.id = this.props.match.params.id.trim();
+    const smurf = this.id? this.props.getSmurf(this.id) : null;
     this.state = {
-      name: '',
-      age: '',
-      height: ''
+      name: smurf.name || '',
+      age: smurf.age || '',
+      height: smurf.height || ''
     };
   }
 
