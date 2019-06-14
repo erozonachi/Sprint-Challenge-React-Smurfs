@@ -22,7 +22,7 @@ export default function App(props) {
   }
 
   const addSmurf = (newSmurf) => {
-    Axios.get(url, newSmurf)
+    Axios.post(url, newSmurf)
     .then(response => {
       setSmurfs(response.data);
     })
@@ -37,7 +37,7 @@ export default function App(props) {
   
   return (
     <div className="App">
-      <SmurfForm />
+      <SmurfForm addHandler={addSmurf} />
       <Smurfs smurfs={smurfs} />
     </div>
   );
