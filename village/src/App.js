@@ -39,8 +39,18 @@ export default function App(props) {
   return (
     <Router>
       <div className="App">
-        <SmurfForm addHandler={addSmurf} />
-        <Smurfs smurfs={smurfs} />
+        <nav>
+          <NavLink to='/' label='Smurfs' />
+          <NavLink to='/smurf-form' label='Add Smurf' />
+        </nav>
+        <Route 
+          path='/' 
+          render={props => <Smurfs smurfs={smurfs} {...props} />}
+        />
+        <Route 
+          path='/smurf-form' 
+          render={props => <SmurfForm addHandler={addSmurf} {...props} />}
+        />
       </div>
     </Router>
   );
