@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, } from 'react-router-dom';
 
 const Smurf = props => {
 
@@ -13,6 +14,9 @@ const Smurf = props => {
       <p>{props.age} smurf years old</p>
       <div>
         <button onClick={handleDelete}>Delete</button>
+        <Link to={`/smurf-form/${props.id}`}>
+          <button>Edit</button>
+        </Link>
       </div>
     </div>
   );

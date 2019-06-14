@@ -4,17 +4,24 @@ class SmurfForm extends Component {
   constructor(props) {
     super(props);
     this.id = this.props.match.params.id.trim();
-    const smurf = this.id? this.props.getSmurf(this.id) : null;
+    const initial = {
+      name: '',
+      age: '',
+      height: '',
+    };
+    const smurf = this.id? this.props.getSmurf(this.id)[0] : initial;
     this.state = {
-      name: smurf.name || '',
-      age: smurf.age || '',
-      height: smurf.height || ''
+      name: smurf.name,
+      age: smurf.age,
+      height: smurf.height,
     };
   }
 
   addSmurf = event => {
     event.preventDefault();
-    if(this.state.name.trim() !== '' && this.state.age.trim() !== '' && this.state.height.trim() !== '') {
+    if(this.state.name.trim() !== '' && 
+      this.state.age.toString().trim() !== '' && 
+      this.state.height.trim() !== '') {
       this.id? this.props.editHandler({...this.state}, this.id) : this.props.addHandler({...this.state});
     }
 
