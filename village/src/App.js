@@ -1,5 +1,6 @@
 import React, { useState, useEffect, } from 'react';
 import Axios from 'axios';
+import {BrowserRouter as Router, Route, NavLink, } from 'react-router-dom';
 
 import './App.css';
 import SmurfForm from './components/SmurfForm';
@@ -36,9 +37,11 @@ export default function App(props) {
   }, []);
   
   return (
-    <div className="App">
-      <SmurfForm addHandler={addSmurf} />
-      <Smurfs smurfs={smurfs} />
-    </div>
+    <Router>
+      <div className="App">
+        <SmurfForm addHandler={addSmurf} />
+        <Smurfs smurfs={smurfs} />
+      </div>
+    </Router>
   );
 }
