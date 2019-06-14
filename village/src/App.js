@@ -74,6 +74,10 @@ export default function App(props) {
           render={props => <Smurfs smurfs={smurfs} delHandler={deleteSmurf} {...props} />}
         />
         <Route 
+          path='/smurfs/:id' 
+          render={props => <Smurf {...getASmurf(props.match.params.id)[0]} delHandler={deleteSmurf} {...props} />}
+        />
+        <Route 
           path='/smurf-form/:id' 
           render={props => <SmurfForm 
             addHandler={addSmurf} 
