@@ -1,6 +1,11 @@
 import React from 'react';
 
 const Smurf = props => {
+
+  const handleDelete = () => {
+    props.delHandler(props.id);
+  }
+  
   return (
     <div className="Smurf">
       <h3>{props.name}</h3>
