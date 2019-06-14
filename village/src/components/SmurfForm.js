@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FormContainer from './StyledComponents/FormContainer';
 
 class SmurfForm extends Component {
   constructor(props) {
@@ -39,7 +40,7 @@ class SmurfForm extends Component {
 
   render() {
     return (
-      <div className="SmurfForm">
+      <FormContainer>
         <form onSubmit={this.addSmurf}>
           <input
             onChange={this.handleInputChange}
@@ -61,7 +62,7 @@ class SmurfForm extends Component {
           />
           <button type="submit">{this.id? 'Edit Smurf' : 'Add to the village'}</button>
         </form>
-      </div>
+      </FormContainer>
     );
   }
 }
