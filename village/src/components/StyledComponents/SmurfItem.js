@@ -25,7 +25,6 @@ const SmurfItem = styled.div`
     }
   }
   > strong {
-    display: flex;
     padding: .5em;
     font-weight: bold;
   }

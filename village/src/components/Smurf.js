@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, } from 'react-router-dom';
+import SmurfItem from './StyledComponents/SmurfItem';
 
 const Smurf = props => {
 
@@ -8,7 +9,7 @@ const Smurf = props => {
   }
 
   return (
-    <div className="Smurf">
+    <SmurfItem>
       <Link to={`/smurfs/${props.id}`}>
         <h3>{props.name}</h3>
       </Link>
@@ -20,7 +21,7 @@ const Smurf = props => {
           <button>Edit</button>
         </Link>
       </div>
-    </div>
+    </SmurfItem>
   );
 };
 
