@@ -42,6 +42,16 @@ export default function App(props) {
     })
   }
 
+  const editSmurf = (smurf, id) => {
+    Axios.put(`${url}/${id}`, smurf)
+    .then(response => {
+      setSmurfs(response.data);
+    })
+    .catch(err => {
+      //Die error
+    })
+  }
+
   useEffect(() => {
     getSmurfs();
   }, []);
