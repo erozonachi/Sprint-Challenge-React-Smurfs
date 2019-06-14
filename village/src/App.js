@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Route, NavLink, } from 'react-router-dom';
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
 import Smurf from './components/Smurf';
+import AppContainer from './StyledComponents/AppContainer';
 
 export default function App(props) {
   const url = 'http://localhost:3333/smurfs'
@@ -60,7 +61,7 @@ export default function App(props) {
   
   return (
     <Router>
-      <div className="App">
+      <AppContainer>
         <nav>
           <NavLink to='/'>Smurfs</NavLink>
           <NavLink to='/smurf-form/ '>Add Smurf</NavLink>
@@ -82,7 +83,7 @@ export default function App(props) {
             getSmurf={getASmurf}
             {...props} />}
         />
-      </div>
+      </AppContainer>
     </Router>
   );
 }
