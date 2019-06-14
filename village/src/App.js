@@ -32,6 +32,16 @@ export default function App(props) {
     })
   }
 
+  const deleteSmurf = (id) => {
+    Axios.delete(`${url}/${id}`)
+    .then(response => {
+      setSmurfs(response.data);
+    })
+    .catch(err => {
+      //Die error
+    })
+  }
+
   useEffect(() => {
     getSmurfs();
   }, []);
