@@ -53,7 +53,7 @@ export default function App(props) {
   }
 
   const getASmurf = (id) => {
-    return smurfs.filter(smurf => smurf.id === parseInt(id));
+    return smurfs.filter((smurf) => smurf.id === parseInt(id,10));
   }
 
   useEffect(() => {
