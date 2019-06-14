@@ -6,7 +6,7 @@ import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
 
 export default function App(props) {
-  const url = 'localhost:3333/smurfs'
+  const url = 'http://localhost:3333/smurfs'
   const [smurfs, setSmurfs] = useState([]);
   // add any needed code to ensure that the smurfs collection exists on state and it has data coming from the server
   // Notice what your map function is looping over and returning inside of Smurfs.
@@ -20,6 +20,10 @@ export default function App(props) {
       //Die error
     })
   }
+
+  useEffect(() => {
+    getSmurfs();
+  }, []);
   
   return (
     <div className="App">
