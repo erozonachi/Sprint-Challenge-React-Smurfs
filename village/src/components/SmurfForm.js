@@ -37,6 +37,7 @@ class SmurfForm extends Component {
 
   handleCancel = event => {
     event.preventDefault();
+    this.id = null;
     this.props.history.push('/smurf-form/ ');
     this.setState({...initial});
   }

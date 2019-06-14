@@ -30,11 +30,15 @@ const FormContainer = styled.div`
     }
     > button {
       border: none;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: bold;
       background-color: teal;
       color: white;
       cursor: pointer;
+      &:last-of-type {
+        background-color: #710000;
+        display: ${props => props.showCancel? 'auto' : 'none'};
+      }
     }
   }
 `;
