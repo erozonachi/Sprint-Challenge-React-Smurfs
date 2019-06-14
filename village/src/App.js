@@ -74,7 +74,11 @@ export default function App(props) {
         />
         <Route 
           path='/smurf-form/:id' 
-          render={props => <SmurfForm addHandler={addSmurf} editHandler={editSmurf} {...props} />}
+          render={props => <SmurfForm 
+            addHandler={addSmurf} 
+            editHandler={editSmurf} 
+            getSmurf={getASmurf}
+            {...props} />}
         />
       </div>
     </Router>
