@@ -2,7 +2,6 @@ import React, { useState, useEffect, } from 'react';
 import Axios from 'axios';
 import {BrowserRouter as Router, Route, NavLink, } from 'react-router-dom';
 
-import './App.css';
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
 import Smurf from './components/Smurf';
