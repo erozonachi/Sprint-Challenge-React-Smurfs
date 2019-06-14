@@ -61,7 +61,7 @@ export default function App(props) {
       <div className="App">
         <nav>
           <NavLink to='/'>Smurfs</NavLink>
-          <NavLink to='/smurf-form'>Add Smurf</NavLink>
+          <NavLink to='/smurf-form/ '>Add Smurf</NavLink>
         </nav>
         <Route 
           exact
@@ -69,7 +69,7 @@ export default function App(props) {
           render={props => <Smurfs smurfs={smurfs} delHandler={deleteSmurf} {...props} />}
         />
         <Route 
-          path='/smurf-form' 
+          path='/smurf-form/:id' 
           render={props => <SmurfForm addHandler={addSmurf} {...props} />}
         />
       </div>
