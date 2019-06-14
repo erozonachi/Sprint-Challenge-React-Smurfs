@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, } from 'react-router-dom';
 import SmurfItem from './StyledComponents/SmurfItem';
+import PropTypes from 'prop-types';
 
 const Smurf = props => {
 
@@ -30,6 +31,13 @@ Smurf.defaultProps = {
   height: '',
   age: ''
 };
+
+Smurf.prototype = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  height: PropTypes.string.isRequired,
+  age: PropTypes.string.isRequired,
+}
 
 export default Smurf;
 
