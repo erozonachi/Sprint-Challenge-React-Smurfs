@@ -47,7 +47,7 @@ class SmurfForm extends Component {
 
   render() {
     return (
-      <FormContainer>
+      <FormContainer showCancel={this.id? true: false}>
         <form onSubmit={this.addSmurf}>
           <input
             onChange={this.handleInputChange}
@@ -68,6 +68,7 @@ class SmurfForm extends Component {
             name="height"
           />
           <button type="submit">{this.id? 'Edit Smurf' : 'Add to the village'}</button>
+          <button onClick={this.handleCancel}>Cancel</button>
         </form>
       </FormContainer>
     );
